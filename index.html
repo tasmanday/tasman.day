@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <link href="css/styles.css" rel="stylesheet">
+        <title>Tasman Day</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg custom-navbar">
+			<div class="container-fluid">
+				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarContent">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="index.html">Home</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="resume.html">Resume</a>
+						</li>
+						<li class="nav-item">
+							<div class="btn-group">
+								<a href="portfolio.html" class="nav-link">Portfolio</a>
+								<button type="button" class="nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="border: none; background: none;">
+									<span class="visually-hidden">Toggle Dropdown</span>
+								</button>
+								<ul class="dropdown-menu">
+									<li><a class="dropdown-item" href="https://github.com/tasmanday/direction_game">Direction game</a></li>
+									<li><a class="dropdown-item" href="https://github.com/tasmanday/42_mini_rt">mini_rt</a></li>
+									<li><a class="dropdown-item" href="https://github.com/tasmanday/42_minishell">minishell</a></li>
+								</ul>
+							</div>
+						</li>
+					<!--	<li class="nav-item">
+							<a class="nav-link" href="#" id="cycle-layers">Cycle Layers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" id="reset-layers">Reset Layers</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" id="reveal-teal">Teal</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" id="reveal-maroon">Maroon</a>
+						</li> -->
+						<li class="nav-item">
+							<a class="nav-link" href="#" id="toggle-painting"> Toggle Paint Teal</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" id="clear-painting">Clear Paint</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" id="reveal-resume"> Reveal Resume</a>
+						</li>
+						<li class="nav-item">
+							<a class="nav-link" href="#" id="reveal-portfolio">Reveal Portfolio</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="layer navy" id="navy"></div>
+	<!--	<div class="layer teal" id="teal"></div>
+		<div class="layer maroon" id="maroon"></div> -->
+		<div class="layer jumble" id="jumbleLayer"></div>
+		<canvas class="layer" id="canvas"></canvas>
+		<div class="tasman-header">
+			<h1>TASMAN DAY</h1>
+			<h2>Software developer</h2>
+			<h4>Draw below to help my resume stand out from the crowd!</h4>
+		</div>
+		<div class="layer text text1" id="text1">
+			<h1>Home</h1>
+			<h2>lorem ipsum</h2>
+			<h3>This project is a miniature ray tracer written from scratch in C. The goal is to understand the fundamentals of ray tracing, including rendering simple 3D scenes with lighting and shadows.
+			GitHub link: https://github.com/tasmanday/42_push_swap
+
+			Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce non lectus eu velit egestas placerat. Sed tempus odio et leo ultricies aliquam. Integer id molestie ante, vel consequat nisi. Ut ultrices lobortis vestibulum. Quisque rhoncus ante ipsum, sed rhoncus erat dapibus non. Pellentesque sit amet condimentum lorem. Donec tortor ipsum, sollicitudin et euismod ac, molestie quis mauris. Duis nunc urna, elementum id finibus ac, tempus a lectus. Sed nec nisi nec sem varius dapibus in a nisl. Suspendisse sapien orci, pretium vitae tortor quis, luctus placerat enim. Vivamus molestie est eget odio accumsan, ut ultrices diam tristique. Phasellus ac velit nisi.
+
+			Maecenas hendrerit enim et dolor blandit consectetur. Praesent ultrices fringilla arcu ut elementum. Quisque ac semper nulla. Maecenas a mattis nulla. Donec tincidunt, enim eu dignissim ullamcorper, mi libero pellentesque augue, quis auctor velit diam eu mauris. Donec sapien purus, auctor non lacinia hendrerit, tristique at leo. Duis ultrices magna risus, a imperdiet metus facilisis nec. Proin volutpat diam tristique venenatis egestas. Vivamus viverra lorem a commodo suscipit. Praesent in varius lectus. Duis vulputate neque nec imperdiet vulputate. Pellentesque in feugiat tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin rhoncus magna eu tellus aliquet vulputate. Proin sit amet ante ultrices, interdum orci at, sodales libero. Aenean luctus magna ex, sed congue orci sodales ornare.
+
+			Donec efficitur viverra urna eget scelerisque. Ut pretium in tortor vel tempus. Vestibulum iaculis tincidunt facilisis. Curabitur at semper nunc. Nulla lorem quam, pretium vel rhoncus et, aliquam eget neque. Suspendisse justo dolor, sodales vitae rhoncus a, pretium eu elit. Nulla facilisi. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Integer semper dictum ex, non pretium libero rhoncus sed. Sed dapibus sed enim ac scelerisque. Duis vestibulum, lectus eget tristique consequat, dolor ipsum pretium orci, sed maximus nisl mi ut erat. Ut venenatis mollis tristique. Vestibulum nec sem rutrum, tempus turpis id, pretium tortor. Ut rhoncus placerat fermentum. Nunc ante est, accumsan ut ipsum tempus, dignissim dignissim velit.
+
+			Praesent consectetur ipsum ut elit euismod, quis congue diam placerat. Suspendisse pulvinar rutrum diam, eu placerat libero posuere posuere. Pellentesque ac dapibus quam. Suspendisse at ultricies nunc. Etiam sed ligula consequat, pulvinar metus eu, venenatis tortor. Vestibulum id neque quis odio consequat iaculis. Suspendisse finibus imperdiet egestas. Cras eu blandit metus. Quisque porttitor quam vitae libero luctus, sed semper turpis euismod. Aenean varius tincidunt neque blandit lobortis. Ut ullamcorper leo dolor, at suscipit purus consequat in. Donec blandit urna quis mi gravida dapibus. Pellentesque lacinia finibus bibendum. Etiam fermentum elementum erat, quis varius nulla mattis ac. Nunc feugiat magna sed nisl lacinia, et bibendum purus ornare. Nulla facilisi.
+
+			Nunc aliquet, sem vitae egestas malesuada, mi felis ullamcorper nisl, vel finibus lacus felis eget tellus. Fusce et risus sollicitudin, suscipit nunc non, aliquet ipsum. Fusce eget quam non purus porttitor elementum et elementum odio. Donec cursus tincidunt lacus, quis dictum est cursus eu. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Cras sit amet magna eget dui sagittis convallis nec quis risus. Aenean egestas elementum lacus vestibulum aliquet. Maecenas cursus augue tortor, eu consequat nisl iaculis a. Nulla et pretium eros. Aliquam eget nisl ut nibh tempor maximus sed ut ipsum. Ut vulputate tempor tempor. Nunc a augue nec augue tristique sodales ut sed mauris. In odio magna, bibendum in tincidunt a, vehicula id diam. Suspendisse aliquet vestibulum urna at pretium. Etiam iaculis tempor massa, eget posuere justo elementum sed.
+
+			Nulla commodo enim sed ante pulvinar molestie. Mauris semper aliquet ornare. Vivamus id suscipit arcu, vel luctus elit. Maecenas accumsan non neque at viverra. Mauris eget malesuada ante. Suspendisse lobortis tellus sit amet vestibulum lacinia. In arcu arcu, varius ac tortor vel, sagittis facilisis dui. Aliquam rhoncus purus in vehicula ullamcorper. Sed interdum sollicitudin ligula id venenatis. Maecenas sodales erat nibh, eu suscipit tortor feugiat et. Vestibulum et mattis sapien, eu tempus tellus. Curabitur id finibus nunc, sagittis cursus est. Sed in tempus felis. Sed id odio cursus risus fringilla pretium eu at ex. Vivamus vel orci nisi.
+
+			Maecenas non odio nec risus tincidunt maximus. Maecenas at ultricies justo. Nunc vel sem vitae nisi faucibus hendrerit. Proin urna tellus, volutpat quis pellentesque non, finibus ut enim. Mauris quis pulvinar diam. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla varius dolor turpis, eget venenatis libero elementum nec. Integer euismod nisi ut cursus dapibus. Sed sapien erat, porttitor vitae orci non, imperdiet lobortis magna. Aliquam fermentum risus at velit pellentesque elementum. Suspendisse fringilla, urna ac scelerisque gravida, nulla sem accumsan libero, non euismod elit dui quis orci. Proin sagittis finibus tellus ut scelerisque. Nam rutrum lacus sed nulla mattis, quis tempus enim fringilla. Cras vehicula eget purus a aliquam. Vestibulum luctus feugiat nunc pellentesque scelerisque. Aenean at facilisis magna.
+
+			Proin interdum quis eros nec vulputate. Nulla feugiat purus id dui venenatis, eget mollis turpis accumsan. Sed pharetra magna nec laoreet facilisis. Sed sed vehicula elit. Aenean consequat feugiat ipsum ut blandit. Phasellus non efficitur nisi, ac viverra erat. Vivamus quis neque elit. Aenean a nibh quis urna fermentum semper in vitae nisl. Morbi consequat tincidunt mauris, a lacinia augue tristique sit amet. Quisque faucibus suscipit luctus. Aliquam dapibus est fermentum, scelerisque urna id, lobortis lectus. Fusce feugiat nisl erat, at consequat mi mattis eget. Ut viverra efficitur eros, sed pulvinar tellus vulputate in. Aliquam eu augue sed nunc convallis egestas imperdiet eu turpis. Curabitur pellentesque egestas urna quis ornare. Donec mollis ante eget aliquam convallis.
+
+			Maecenas non lorem eu est dapibus faucibus ac ut dolor. Sed et pellentesque tortor, ut porttitor dolor. Proin a tristique diam. Vestibulum vitae ornare ligula, nec mattis velit. Praesent maximus turpis lacus, eget dictum ante imperdiet ut. Pellentesque interdum egestas tristique. Suspendisse ultricies, ligula vel finibus eleifend, lectus lacus semper turpis, ac condimentum ex lorem vel lectus. Donec nec turpis laoreet lacus tincidunt maximus ultrices dignissim massa. Praesent vel dictum eros. Aenean semper ligula sed urna bibendum auctor. In finibus commodo risus, sed lacinia lectus pharetra in.
+
+			Duis laoreet varius cursus. Mauris rhoncus ut magna a commodo. Curabitur eget tincidunt velit. Phasellus fermentum iaculis augue, vitae vulputate mi. Vivamus convallis dui egestas nunc hendrerit, ut finibus est ultricies. Donec tempor nisi et ex convallis tempus. Maecenas varius est sed mauris lacinia, id placerat ipsum porttitor. Nam in lacinia ex. Quisque at augue fringilla, eleifend risus vel, sodales sapien. Aenean vitae tortor placerat, dictum lacus vitae, sodales massa. Proin molestie viverra eros, eget tincidunt augue fermentum quis. Nulla facilisi. Ut facilisis ligula tellus, sed egestas lacus congue et. Curabitur id tempor nisi, eu eleifend ipsum. Nam gravida efficitur malesuada.
+
+			Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam et varius nulla, at porta sem. Etiam vel eros quam. In quis ullamcorper neque. Phasellus eleifend, lorem a dapibus rhoncus, massa odio euismod nulla, eu ullamcorper sem sem sed turpis. Integer convallis eros lorem, eget facilisis orci mollis nec. Etiam ac enim vitae metus vulputate cursus. Pellentesque placerat nunc ut turpis mattis, vel sollicitudin ligula fermentum. Nullam vestibulum condimentum nibh id vestibulum. Integer vel euismod lectus. In hendrerit orci in mauris viverra, in tristique quam accumsan. Donec lacus nisl, ullamcorper vel sollicitudin non, maximus id odio. Nam at auctor velit.
+			</h3>
+		</div>
+		<div class="layer text text2" id="text2">
+			<h1>Emoh</h1>
+			<h2>muspi merol</h2>
+			<h3>I was selected to take part in the AWS National Tertiary Cloud Computing Bootcamp where I completed workshops and team challenges related to the Amazon Web Services Ecosystem.</h3>
+		</div>
+
+		<script type="module" src="js/main.js"></script>
+    </body>
+</html>

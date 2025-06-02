@@ -1,0 +1,41 @@
+.tasman-header {
+	position: absolute;
+	border-radius: 0.8rem;
+	top: 130px;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border: 4px solid #11cbd7;
+	margin: 2rem auto 2rem auto;
+	padding: 1.5rem 2rem;
+	background: #182433;
+	text-align: center;
+	width: 95vw;
+	max-width: 800px;
+	box-sizing: border-box;
+	transition: width 0.3s, max-width 0.3s;
+	z-index: 30;
+	pointer-events: none;
+  }
+  
+  .tasman-header h1 {
+	margin: 0;
+	font-size: 2.5rem;
+	color: #FFCC7F;
+  }
+
+  .tasman-header h2 {
+	color: #11cbd7;
+  }
+
+  .tasman-header h4 {
+	color: #FFCC7F;
+  }
+
+  
+  /* Responsive: wider screens center and limit width */
+  /*@media (min-width: 700px) {
+	.tasman-header {
+	  width: 60vw;
+	  max-width: 800px;
+	}
+  } */

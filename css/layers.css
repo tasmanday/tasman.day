@@ -1,0 +1,64 @@
+:root{
+	--navbar-height: 56px;
+}
+
+.layer {
+	position: absolute;
+	top: var(--navbar-height);
+	left: 0;
+	width: 100vw;
+	height: calc(100vh - var(--navbar-height));
+}
+
+
+/* background */
+.layer.navy {
+	position: fixed;
+	background-color: #182433;
+	z-index: 3;
+}
+
+.layer.teal {
+	background-color: #013740;
+	z-index: 1;
+}
+
+.layer.maroon {
+	background-color: #501B27;
+	z-index: 2;
+}
+
+.layer.jumble {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	z-index: 5;
+	pointer-events: none;
+	overflow: hidden;
+	mix-blend-mode: screen;
+	background-color: #182433;
+}
+
+.layer.jumble span {
+	position: absolute;
+	font-family: monospace;
+	white-space: pre;
+	user-select: none;
+	font-weight: bold;
+	opacity: 1;
+}
+
+#canvas {
+	z-index: 15;
+	pointer-events: auto;
+	background-color: transparent;
+	position: fixed;
+	overflow: hidden;
+}
+
+.layer[style*="pointer-events: none"],
+.layer[style*="pointer-events: none"] * {
+	pointer-events: none !important;
+}
