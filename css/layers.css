@@ -12,20 +12,10 @@
 
 
 /* background */
-.layer.navy {
+.layer.background {
 	position: fixed;
 	background-color: #182433;
 	z-index: 3;
-}
-
-.layer.teal {
-	background-color: #013740;
-	z-index: 1;
-}
-
-.layer.maroon {
-	background-color: #501B27;
-	z-index: 2;
 }
 
 .layer.jumble {

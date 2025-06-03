@@ -3,6 +3,7 @@
 	flex-direction: column;
     align-items: center;
 	background: transparent;
+	mix-blend-mode: screen;
 }
 
 .layer.text h1 {
