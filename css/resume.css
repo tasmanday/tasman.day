@@ -1,1 +1,8 @@
 
+.resume-container{
+    display: flex;
+    border-color: blueviolet;
+    border-width: 2rem;
+    margin-top: 240px;
+    z-index: 5;
+}

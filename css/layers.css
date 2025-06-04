@@ -12,10 +12,16 @@
 
 
 /* background */
-.layer.background {
+.layer.background.navy {
 	position: fixed;
 	background-color: #182433;
-	z-index: 3;
+	z-index: 1;
+}
+
+.layer.background.teal {
+	position: fixed;
+	background-color: #013740;
+	z-index: 1;
 }
 
 .layer.jumble {
@@ -28,7 +34,6 @@
 	pointer-events: none;
 	overflow: hidden;
 	mix-blend-mode: screen;
-	background-color: #182433;
 }
 
 .layer.jumble span {
