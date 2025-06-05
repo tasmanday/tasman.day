@@ -34,6 +34,10 @@
     border-style: solid;
 } */
 
+.resume-header h1 {
+    color: #027cac;
+}
+
 
 body {
 	background-color: transparent;
@@ -55,6 +59,8 @@ body {
     box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1); */
 	padding: 1.5rem;
 	z-index: 5;
+    gap: 1.5rem;
+    /* mix-blend-mode: screen; */
 }
 
 .resume-skills, .resume-blurb {
@@ -62,7 +68,10 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	width: 47%;
+	/*width: 47%;*/
+    flex: 1 1 300px;
+    min-width: 300px;
+    max-width: 600px;
 	background-color: #b4f8ef;
 	padding: 1rem;
 	border-radius: 8px;
@@ -71,9 +80,21 @@ body {
     border-color: #009786;
 }
 
-.resume-skills h2, .resume-blurb h1 {
-	color: #009786;
+@media (max-width: 991.98px) {
+    .resume-skills, .resume-blurb {
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+}
+
+.resume-skills h2, .resume-blurb h2 {
+	color: #03796b;
 	margin-bottom: 1rem;
+}
+
+.resume-blurb p {
+    color: #043030;
+    font-size: 1.15rem;
 }
 
 ul {
