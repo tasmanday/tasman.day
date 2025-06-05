@@ -37,7 +37,6 @@
 
 body {
 	background-color: transparent;
-	color: #0d3d3a;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
@@ -51,9 +50,9 @@ body {
 	max-width: 1330px;
 	margin-left: auto;
 	margin-right: auto;
-	border: 3px solid blueviolet; /* keep until layout is solid */
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-	border-radius: 12px;
+	/* border: 3px solid #004450;
+    border-radius: 12px;
+    box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1); */
 	padding: 1.5rem;
 	z-index: 5;
 }
@@ -67,7 +66,7 @@ body {
 	background-color: #b4f8ef;
 	padding: 1rem;
 	border-radius: 8px;
-	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+	box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.55);
 	border: 3px solid; /* for debugging layout */
     border-color: #009786;
 }
@@ -83,6 +82,7 @@ ul {
 
 ul li {
 	margin-bottom: 0.5rem;
+    color:#03b6a1;
 }
 
 
@@ -105,6 +105,7 @@ ul li {
 	align-items: center;
 	transition: transform 0.2s ease;
 	cursor: pointer;
+    margin-bottom: 1.5rem;
 }
 
 .skill-icon:hover {
@@ -114,11 +115,17 @@ ul li {
 .skill-icon svg {
 	width: 100%;
 	height: 100%;
+    fill: #01584e;
+    transition: fill 0.3s ease;
+}
+
+.skill-icon:hover svg {
+    fill: #03b6a1;
 }
 
 .skill-icon .label {
 	position: absolute;
-	bottom: -1.5rem;
+	bottom: -2rem;
 	background: rgba(0, 128, 128, 0.8); /* Teal */
 	color: white;
 	font-size: 0.9rem;
