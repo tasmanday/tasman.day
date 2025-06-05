@@ -33,9 +33,9 @@
 
   
   /* Responsive: wider screens center and limit width */
-  /*@media (min-width: 700px) {
+  @media (min-width: 700px) {
 	.tasman-header {
 	  width: 60vw;
 	  max-width: 800px;
 	}
-  } */
+  }
