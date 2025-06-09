@@ -80,6 +80,7 @@ body {
     border-color: #009786;
 }
 
+ /* copy for home.resume-container */
 @media (max-width: 991.98px) {
     .resume-skills, .resume-blurb {
         flex: 1 1 100%;
@@ -160,6 +161,10 @@ body {
 
 
 
+.home.resume-container {
+	mix-blend-mode: screen;
+}
+
 .home.resume-skills, .home.resume-blurb {
 	display: flex;
 	flex-direction: column;
@@ -179,11 +184,13 @@ body {
 .home.resume-skills h2, .home.resume-blurb h2 {
 	color: #0ea3ad;
 	margin-bottom: 1rem;
+	mix-blend-mode: screen;
 }
 
 .home.resume-blurb p {
     color: #11cbd7;
     font-size: 1.15rem;
+	mix-blend-mode: screen;
 }
 
 .home.skill-icon svg {

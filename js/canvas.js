@@ -50,16 +50,19 @@ export function initCanvas() {
 		}
 	});
 
+	const resumeLayer = document.getElementById('resume-layer');
+	const portfolioLayer = document.getElementById('portfolio-layer');
+	const contentLayers = [resumeLayer, portfolioLayer];
+
 	function enablePaintingMode() {
 		canvas.style.pointerEvents = 'auto';
 		canvas.style.backgroundColor = 'transparent';
-		document.getElementById('text2').style.zIndex = 10;
 
-		const textLayers = document.querySelectorAll('.layer.text');
-		console.log('Text layers found:', textLayers.length);
-		textLayers.forEach(layer => {
-			console.log('Disabling pointer-events on:', layer);
-			layer.style.pointerEvents = 'none';
+		contentLayers.forEach(layer => {
+			if (layer) {
+				console.log('Disabling pointer-events on:', layer);
+				layer.style.pointerEvents = 'none';
+			}
 		});
 
 		canvas.addEventListener('mousedown', startPosition);
@@ -74,9 +77,8 @@ export function initCanvas() {
 	function disablePaintingMode() {
 		canvas.style.pointerEvents = 'none';
 
-		document.querySelectorAll('.layer.text').forEach(layer => {
-			layer.style.pointerEvents = 'auto';
-		});
+		// write code to select highest z index from content layers //
+		resumeLayer.style.pointerEvents = 'auto';
 
 		canvas.removeEventListener('mousedown', startPosition);
 		canvas.removeEventListener('mouseup', endPosition);
@@ -92,16 +94,13 @@ export function initCanvas() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 	});
 
-	const text1 = document.getElementById('text1');
-	const text2 = document.getElementById('text2');
-
 	document.getElementById('reveal-resume').addEventListener('click', (e) => {
 		e.preventDefault();
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
 		brushColor = '#013740'; // Reset to teal
-		text1.style.zIndex = 25;
-		text2.style.zIndex = 10;
+		resumeLayer.style.zIndex = 25;
+		portfolioLayer.style.zIndex = 10;
 
 		if (!isPaintingMode) {
 			enablePaintingMode();
@@ -116,8 +115,8 @@ export function initCanvas() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear paint
 		brushColor = '#501B27'; // Burgundy red
 
-		text1.style.zIndex = 10;
-		text2.style.zIndex = 25;
+		resumeLayer.style.zIndex = 10;
+		portfolioLayer.style.zIndex = 25;
 
 		if (!isPaintingMode) {
 			enablePaintingMode();
@@ -127,8 +126,8 @@ export function initCanvas() {
 	});
 
 	// Initial setup
-	text1.style.zIndex = 25;
-	text2.style.zIndex = 10;
+	resumeLayer.style.zIndex = 25;
+	portfolioLayer.style.zIndex = 10;
 	enablePaintingMode();
 	isPaintingMode = true;
 	document.getElementById('toggle-painting').textContent = 'Stop Painting';
