@@ -4,13 +4,16 @@
     <head>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-        <link href="styles.css" rel="stylesheet">
+        <link href="css/styles.css" rel="stylesheet">
         <title>Tasman Day - Portfolio</title>
     </head>
     <body>
-		<nav class="navbar navbar-expand-lg bg-light">
+		<nav class="navbar navbar-expand-lg custom-navbar">
 			<div class="container-fluid">
-				<div class="collapse navbar-collapse">
+				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarContent">
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 						<li class="nav-item">
 							<a class="nav-link" href="index.html">Home</a>
@@ -35,6 +38,29 @@
 				</div>
 			</div>
 		</nav>
-        <h1>Portfolio</h1>
+		<div class="layer background maroon"></div>
+		<div class="tasman-header portfolio-header">
+			<h1>TASMAN DAY</h1>
+			<h2>Software developer</h2>
+		</div>
+		<div class="portfolio-container">
+			<div class="project-container">
+				<div class="project-content">
+					<div class="project-header">
+						<h2>mini_rt</h2>
+					</div>
+					<div class="project-description">
+						<p>mini_rt is a raycasting engine written in C. It is a raycasting engine that renders a 3D scene from a simple text description.</p>
+					</div>
+					<div class="project-links">
+						<a href="https://github.com/tasmanday/42_mini_rt">GitHub</a>
+					</div>
+				</div>
+				<div class="project-image">
+					<img src="images/project_images/mini_rt.jpg" alt="mini_rt">
+				</div>
+			</div>
+
+		</div>
     </body>
 </html>

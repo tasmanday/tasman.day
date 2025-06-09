@@ -24,6 +24,12 @@
 	z-index: 1;
 }
 
+.layer.background.maroon {
+	position: fixed;
+	background-color: #501B27;
+	z-index: 1;
+}
+
 .layer.jumble {
 	position: fixed;
 	top: 0;
