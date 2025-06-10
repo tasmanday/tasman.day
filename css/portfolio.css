@@ -20,9 +20,9 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	position: relative;
-	margin-top: 250px;
+	top: 250px;
 	width: 95vw;
-	max-width: 800px;
+	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
 	/* border: 3px solid #004450;
@@ -41,7 +41,7 @@ body {
 	align-items: stretch;
     flex: 1 1 300px;
     min-width: 300px;
-    max-width: 800px;
+    max-width: 980px;
 	background-color: #cfa7a2;
 	padding: 1rem;
     gap: 1rem;
@@ -106,7 +106,7 @@ body {
     padding: 0.2rem 0.5rem;
     border: 2px solid transparent;
     background: none;
-    color: #300000;
+    color: #320000;
     border-radius: 8px;
     transition: 
         background-color 0.2s,
@@ -118,9 +118,19 @@ body {
 }
 
 .project-links a:hover {
-    border: 2px solid #941600;
-    color: #182433;
+    border: 2px solid #920000;
+    color: #920000;
     box-shadow: 0 0 0 0.2rem rgba(148, 22, 0, 0.5);
     outline: none;
 }
 
+.project-links a i {          /* font-icon inside the link */
+    color: inherit !important;   /* <i> now takes the link’s colour */
+    transition: color 0.2s;      /* same smooth change as the text */
+}
+
+/* If you ever switch to an SVG icon, include this as well: */
+.project-links a svg {
+    fill: currentColor !important;
+    transition: fill 0.2s;
+}
