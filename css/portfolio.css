@@ -17,7 +17,7 @@ body {
 
 .portfolio-container {
 	display: flex;
-	flex-wrap: wrap;
+	flex-direction: column;
 	justify-content: space-evenly;
 	position: relative;
 	top: 250px;
@@ -39,7 +39,7 @@ body {
 	flex-direction: row;
 	justify-content: space-around;
 	align-items: stretch;
-    flex: 1 1 300px;
+    flex: 1 1 180px;
     min-width: 300px;
     max-width: 980px;
 	background-color: #cfa7a2;
@@ -56,8 +56,18 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
     color: #300000;
     /* border: 2px solid #67d81c; */
+}
+
+.project-header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.project-header a:hover {
+    color: #920000;
 }
 
 .project-image {
