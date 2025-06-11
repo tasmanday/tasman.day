@@ -13,8 +13,10 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	position: relative;
-	margin-top: 250px;
+	position: absolute;
+	top: 250px;
+	left: 0;
+	right: 0;
 	width: 90vw;
 	max-width: 1330px;
 	margin-left: auto;

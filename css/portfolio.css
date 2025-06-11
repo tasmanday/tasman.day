@@ -19,13 +19,15 @@ body {
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
-	position: relative;
+	position: absolute;
 	top: 250px;
+    left: 0;
+    right: 0;
 	width: 95vw;
 	max-width: 1000px;
 	margin-left: auto;
 	margin-right: auto;
-	/* border: 3px solid #004450;
+/*	border: 3px solid #11c3e2;
     border-radius: 12px;
     box-shadow: 2px 4px 20px rgba(0, 0, 0, 0.1); */
 	padding: 1.5rem;
@@ -134,13 +136,38 @@ body {
     outline: none;
 }
 
-.project-links a i {          /* font-icon inside the link */
-    color: inherit !important;   /* <i> now takes the link’s colour */
-    transition: color 0.2s;      /* same smooth change as the text */
+.project-links a i {
+    color: inherit !important;
+    transition: color 0.2s;
 }
 
-/* If you ever switch to an SVG icon, include this as well: */
 .project-links a svg {
     fill: currentColor !important;
     transition: fill 0.2s;
+}
+
+.home.portfolio-container {
+    mix-blend-mode: screen;
+}
+
+.home.project-container {
+    background-color: rgba(207, 167, 162, 0.05);
+}
+
+.home.project-content {
+    color: #da0000;
+}
+
+.home.project-header a:hover {
+    color: #ff9999;
+}
+
+.home.project-links a {
+    color: #da0000;
+}
+
+.home.project-links a:hover {
+    border: 2px solid #ff9999;
+    color: #ff9999;
+    box-shadow: 0 0 0 0.2rem rgba(255, 153, 153, 0.5);
 }

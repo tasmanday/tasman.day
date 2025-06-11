@@ -77,8 +77,14 @@ export function initCanvas() {
 	function disablePaintingMode() {
 		canvas.style.pointerEvents = 'none';
 
-		// write code to select highest z index from content layers //
-		resumeLayer.style.pointerEvents = 'auto';
+		const resumeZ = parseInt(window.getComputedStyle(resumeLayer).zIndex) || 0;
+		const portfolioZ = parseInt(window.getComputedStyle(portfolioLayer).zIndex) || 0;
+		
+		if (resumeZ >= portfolioZ) {
+			resumeLayer.style.pointerEvents = 'auto';
+		} else {
+			portfolioLayer.style.pointerEvents = 'auto';
+		}
 
 		canvas.removeEventListener('mousedown', startPosition);
 		canvas.removeEventListener('mouseup', endPosition);
