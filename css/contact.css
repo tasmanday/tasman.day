@@ -93,11 +93,6 @@
     background-color: #c0392b;
 }
 
-/* Header styling */
-.portfolio-header h1 {
-    color: #d35400;
-}
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .contact-form {
