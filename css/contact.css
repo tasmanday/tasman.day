@@ -18,8 +18,8 @@
     top: 250px;
     left: 0;
     right: 0;
-    width: 90vw;
-    max-width: 800px;
+    width: 95vw;
+	max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     padding: 1.5rem;
@@ -103,4 +103,21 @@
     .fs-form {
         padding: 1.5rem;
     }
+}
+
+
+home.fs-form {
+    background-color: transparent;
+    border: 3px solid #f3da6a;
+}
+
+home.fs-input, .fs-textarea {
+    background-color: transparent;
+    border: 2px solid #f3da6a;
+    color: #f79540;
+}
+
+home.fs-button{
+    background-color: #f3da6a;
+    color: transparent;
 }
