@@ -30,6 +30,18 @@
 	z-index: 1;
 }
 
+.layer.background.orange {
+	position: fixed;
+	background-color: #68310d;
+	z-index: 1;
+}
+
+.layer.background.yellow {
+	position: fixed;
+	background-color: #916f01;
+	z-index: 1;
+}
+
 .layer.jumble {
 	position: fixed;
 	top: 0;

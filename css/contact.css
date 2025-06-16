@@ -1,0 +1,111 @@
+.contact-header h1 {
+    color: #f79540;
+}
+
+.contact-header h2 {
+    color: #fff1a1;
+}
+
+.contact-header {
+    border-color: #a08615;
+}
+
+
+.contact-form {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 250px;
+    left: 0;
+    right: 0;
+    width: 90vw;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    z-index: 5;
+}
+
+.fs-form {
+    width: 100%;
+    background-color: #ffeea5;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.55);
+    border: 3px solid #a08615;
+}
+
+.fs-field {
+    margin-bottom: 1.5rem;
+}
+
+.fs-label {
+    display: block;
+    color: #634800;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.fs-input, .fs-textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #a08615;
+    border-radius: 4px;
+    background-color: #fff9e1;
+    transition: border-color 0.3s ease;
+    color: #634800
+}
+
+.fs-input:focus, .fs-textarea:focus {
+    outline: none;
+    border-color: #f79540;
+    box-shadow: 0 0 0 2px rgba(211, 84, 0, 0.2);
+}
+
+.fs-textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.fs-description {
+    color: #e67e22;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+.fs-button {
+    background-color: #a08615;
+    color: white;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.fs-button:hover {
+    background-color: #e67e22;
+}
+
+.fs-button:active {
+    background-color: #c0392b;
+}
+
+/* Header styling */
+.portfolio-header h1 {
+    color: #d35400;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-form {
+        width: 95vw;
+        padding: 1rem;
+    }
+    
+    .fs-form {
+        padding: 1.5rem;
+    }
+}
