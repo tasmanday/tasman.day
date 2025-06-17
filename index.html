@@ -56,11 +56,13 @@
 		<div class="layer background navy"></div>
 		<div class="layer jumble" id="jumbleLayer"></div>
 		<canvas class="layer" id="canvas"></canvas>
+
 		<div class="tasman-header">
 			<h1>TASMAN DAY</h1>
 			<h2>Software developer</h2>
 			<h4>Draw below to help my resume stand out from the crowd!</h4>
 		</div>
+
 
 		<div class="home resume-container" id="resume-layer">
 			<div class="home resume-skills">
@@ -150,7 +152,6 @@
 		</div>
 
 
-
 		<div class="home portfolio-container" id="portfolio-layer">
 
 			<!-- mini_rt -->
@@ -230,6 +231,43 @@
 					</div>
 				</div>
 			</div>
+		</div>
+
+
+		<div class ="home contact-form">
+			<form
+				action="https://formspree.io/f/mjkrrakg"
+				class="home fs-form"
+				target="_top"
+				method="POST"
+				data-redirect="false"
+			>
+				<div class="fs-field">
+					<label class="home fs-label" for="name">Your Name</label>
+					<input class="home fs-input" id="name" name="name" required />
+				</div>
+				<div class="fs-field">
+					<label class="home fs-label" for="email">Email</label>
+					<input class="home fs-input" id="email" name="email" required />
+				<!--	<p class="fs-description">
+					This will help me respond to your query via an email.
+					</p> -->
+				</div>
+				<div class="fs-field">
+					<label class="home fs-label" for="message">Message</label>
+					<textarea
+					class="home fs-textarea"
+					id="message"
+					name="message"
+					required
+					></textarea>
+				<!--	<p class="fs-description">What would you like to discuss?</p> -->
+				</div>
+				<div class="fs-button-group">
+					<button class="home fs-button" type="submit">Submit</button>
+				</div>
+				</form>				  
+		</div>
 
 		<script type="module" src="js/main.js"></script>
     </body>

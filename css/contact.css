@@ -137,3 +137,7 @@
     background-color: rgba(255, 249, 225, 0.15);
     transition: background-color 0.3s ease;
 }
+
+.home.contact-form {
+    mix-blend-mode: screen;
+}
