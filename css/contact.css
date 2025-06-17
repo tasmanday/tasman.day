@@ -106,18 +106,34 @@
 }
 
 
-home.fs-form {
+.home.fs-form {
     background-color: transparent;
     border: 3px solid #f3da6a;
 }
 
-home.fs-input, .fs-textarea {
+.home.fs-input, .home.fs-textarea {
     background-color: transparent;
     border: 2px solid #f3da6a;
-    color: #f79540;
+    color: #ff8a23;
 }
 
-home.fs-button{
+.home.fs-button {
     background-color: #f3da6a;
-    color: transparent;
+    color: #916f01;
+}
+
+.home.fs-label {
+    color: #f3da6a;
+}
+
+.home.fs-button:hover {
+    background-color: #f79540;
+}
+
+.home.fs-input:focus, .home.fs-textarea:focus {
+    outline: none;
+    border-color: #f79540;
+    box-shadow: 0 0 0 2px rgba(211, 84, 0, 0.2);
+    background-color: rgba(255, 249, 225, 0.15);
+    transition: background-color 0.3s ease;
 }
