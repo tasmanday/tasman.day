@@ -52,7 +52,8 @@ export function initCanvas() {
 
 	const resumeLayer = document.getElementById('resume-layer');
 	const portfolioLayer = document.getElementById('portfolio-layer');
-	const contentLayers = [resumeLayer, portfolioLayer];
+	const contactLayer = document.getElementById('contact-layer');
+	const contentLayers = [resumeLayer, portfolioLayer, contactLayer];
 
 	function enablePaintingMode() {
 		canvas.style.pointerEvents = 'auto';
@@ -77,13 +78,21 @@ export function initCanvas() {
 	function disablePaintingMode() {
 		canvas.style.pointerEvents = 'none';
 
-		const resumeZ = parseInt(window.getComputedStyle(resumeLayer).zIndex) || 0;
-		const portfolioZ = parseInt(window.getComputedStyle(portfolioLayer).zIndex) || 0;
-		
-		if (resumeZ >= portfolioZ) {
-			resumeLayer.style.pointerEvents = 'auto';
-		} else {
-			portfolioLayer.style.pointerEvents = 'auto';
+		let maxZIndex = -Infinity;
+		let topLayer = null;
+
+		contentLayers.forEach(layer => {
+			if (layer) {
+				const zIndex = parseInt(window.getComputedStyle(layer).zIndex) || 0;
+				if (zIndex > maxZIndex) {
+					maxZIndex = zIndex;
+					topLayer = layer;
+				}
+			}
+		});
+
+		if (topLayer) {
+			topLayer.style.pointerEvents = 'auto';
 		}
 
 		canvas.removeEventListener('mousedown', startPosition);
@@ -104,9 +113,11 @@ export function initCanvas() {
 		e.preventDefault();
 
 		ctx.clearRect(0, 0, canvas.width, canvas.height);
-		brushColor = '#013740'; // Reset to teal
+		brushColor = '#013740'; // Teal
+
 		resumeLayer.style.zIndex = 25;
 		portfolioLayer.style.zIndex = 10;
+		contactLayer.style.zIndex = 11;
 
 		if (!isPaintingMode) {
 			enablePaintingMode();
@@ -121,8 +132,26 @@ export function initCanvas() {
 		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear paint
 		brushColor = '#501B27'; // Burgundy red
 
-		resumeLayer.style.zIndex = 10;
 		portfolioLayer.style.zIndex = 25;
+		resumeLayer.style.zIndex = 10;
+		contactLayer.style.zIndex = 11;
+
+		if (!isPaintingMode) {
+			enablePaintingMode();
+			isPaintingMode = true;
+			document.getElementById('toggle-painting').textContent = 'Stop Painting';
+		}
+	});
+
+	document.getElementById('reveal-contact').addEventListener('click', (e) => {
+		e.preventDefault();
+
+		ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear paint
+		brushColor = '#916f01'; // Dark yellow
+
+		contactLayer.style.zIndex = 25;
+		resumeLayer.style.zIndex = 10;
+		portfolioLayer.style.zIndex = 11;
 
 		if (!isPaintingMode) {
 			enablePaintingMode();
@@ -134,6 +163,7 @@ export function initCanvas() {
 	// Initial setup
 	resumeLayer.style.zIndex = 25;
 	portfolioLayer.style.zIndex = 10;
+	contactLayer.style.zIndex = 11;
 	enablePaintingMode();
 	isPaintingMode = true;
 	document.getElementById('toggle-painting').textContent = 'Stop Painting';
