@@ -3,6 +3,10 @@
     color: #027cac;
 }
 
+.resume-header {
+	top: 120px;
+}
+
 
 body {
 	background-color: transparent;
@@ -14,7 +18,7 @@ body {
 	flex-wrap: wrap;
 	justify-content: space-evenly;
 	position: absolute;
-	top: 250px;
+	top: 224px;
 	left: 0;
 	right: 0;
 	width: 90vw;
@@ -129,6 +133,7 @@ body {
 
 .home.resume-container {
 	mix-blend-mode: screen;
+	top: 290px;
 }
 
 .home.resume-skills, .home.resume-blurb {

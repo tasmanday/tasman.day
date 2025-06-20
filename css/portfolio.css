@@ -8,6 +8,7 @@
 
 .portfolio-header {
     border-color: #920000;
+    top: 120px;
 }
 
 body {
@@ -20,7 +21,7 @@ body {
 	flex-direction: column;
 	justify-content: space-evenly;
 	position: absolute;
-	top: 250px;
+	top: 224px;
     left: 0;
     right: 0;
 	width: 95vw;
@@ -148,6 +149,7 @@ body {
 
 .home.portfolio-container {
     mix-blend-mode: screen;
+    top: 290px;
 }
 
 .home.project-container {

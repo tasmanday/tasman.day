@@ -8,6 +8,7 @@
 
 .contact-header {
     border-color: #f3da6a;
+    top: 120px;
 }
 
 
@@ -15,7 +16,7 @@
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 250px;
+    top: 224px;
     left: 0;
     right: 0;
     width: 95vw;
@@ -140,4 +141,5 @@
 
 .home.contact-form {
     mix-blend-mode: screen;
+    top: 290px;
 }
