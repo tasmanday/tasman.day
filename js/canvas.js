@@ -43,10 +43,10 @@ export function initCanvas() {
 
 		if (isPaintingMode) {
 			enablePaintingMode();
-			e.target.textContent = 'Stop Painting';
+			e.target.textContent = 'Enable Links';
 		} else {
 			disablePaintingMode();
-			e.target.textContent = 'Start Painting';
+			e.target.textContent = 'Continue Painting';
 		}
 	});
 
@@ -119,10 +119,15 @@ export function initCanvas() {
 		portfolioLayer.style.zIndex = 10;
 		contactLayer.style.zIndex = 11;
 
+		const drawingInstruction = document.querySelector('.drawing-instruction');
+		if (drawingInstruction) {
+			drawingInstruction.textContent = 'Draw below to help my resume stand out from the crowd!';
+		}
+
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Stop Painting';
+			document.getElementById('toggle-painting').textContent = 'Enable Links';
 		}
 	});
 
@@ -136,10 +141,15 @@ export function initCanvas() {
 		resumeLayer.style.zIndex = 10;
 		contactLayer.style.zIndex = 11;
 
+		const drawingInstruction = document.querySelector('.drawing-instruction');
+		if (drawingInstruction) {
+			drawingInstruction.textContent = 'Draw below to help my portfolio stand out from the crowd!';
+		}
+
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Stop Painting';
+			document.getElementById('toggle-painting').textContent = 'Enable Links';
 		}
 	});
 
@@ -153,10 +163,15 @@ export function initCanvas() {
 		resumeLayer.style.zIndex = 10;
 		portfolioLayer.style.zIndex = 11;
 
+		const drawingInstruction = document.querySelector('.drawing-instruction');
+		if (drawingInstruction) {
+			drawingInstruction.textContent = 'Draw below to help my contact form stand out from the crowd!';
+		}
+
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Stop Painting';
+			document.getElementById('toggle-painting').textContent = 'Enable Links';
 		}
 	});
 
@@ -166,5 +181,5 @@ export function initCanvas() {
 	contactLayer.style.zIndex = 11;
 	enablePaintingMode();
 	isPaintingMode = true;
-	document.getElementById('toggle-painting').textContent = 'Stop Painting';
+	document.getElementById('toggle-painting').textContent = 'Enable Links';
 }
