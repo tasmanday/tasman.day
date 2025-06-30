@@ -49,7 +49,7 @@ export function createJumble() {
 	const ctx = canvas.getContext('2d');
 	
 	function resizeCanvas() {
-		const navbar = document.querySelector('.navbar');
+		const navbar = document.querySelector('.custom-navbar');
 		const navbarHeight = navbar.offsetHeight;
 		
 		canvas.width = window.innerWidth;

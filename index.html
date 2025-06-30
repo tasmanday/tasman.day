@@ -2,59 +2,34 @@
 
 <html lang="en">
     <head>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!--    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
         <link href="css/styles.css" rel="stylesheet">
         <title>Tasman Day</title>
     </head>
     <body>
-		<nav class="navbar navbar-expand-lg custom-navbar">
-			<div class="container-fluid">
-				<button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
-				<div class="collapse navbar-collapse" id="navbarContent">
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0">
-						<li class="nav-item">
-							<a class="nav-link active" aria-current="page" href="./">Home</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="resume.html">Resume</a>
-						</li>
-						<li class="nav-item">
-							<div class="btn-group">
-								<a href="portfolio.html" class="nav-link">Portfolio</a>
-								<button type="button" class="nav-link dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false" style="border: none; background: none;">
-									<span class="visually-hidden">Toggle Dropdown</span>
-								</button>
-								<ul class="dropdown-menu">
-									<li><a class="dropdown-item" href="https://github.com/tasmanday/direction_game">Direction game</a></li>
-									<li><a class="dropdown-item" href="project_pages/mini_rt.html">mini_rt</a></li>
-									<li><a class="dropdown-item" href="https://github.com/tasmanday/42_minishell">minishell</a></li>
-								</ul>
-							</div>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="contact.html">Contact Me</a>
-						</li>
-					</ul>
-					<ul class="navbar-nav">
-						<li class="nav-item">
-							<a class="nav-link" href="#" id="toggle-painting"> Toggle Paint</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#" id="clear-painting">Clear Paint</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#" id="reveal-resume"> Reveal Resume</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#" id="reveal-portfolio">Reveal Portfolio</a>
-						</li>
-						<li class="nav-item">
-							<a class="nav-link" href="#" id="reveal-contact">Reveal Contact</a>
-						</li>
-					</ul>
+		<nav class="custom-navbar">
+			<div class="navbar-container">
+				<div class="navbar-left">
+					<a href="./" class="nav-link home-link">Home</a>
+					<div class="dropdown">
+						<button class="dropdown-toggle">Jump to Page</button>
+						<div class="dropdown-menu">
+							<a href="resume.html" class="dropdown-item">Resume</a>
+							<a href="portfolio.html" class="dropdown-item">Portfolio</a>
+							<a href="contact.html" class="dropdown-item">Contact Me</a>
+						</div>
+					</div>
+				</div>
+				<div class="navbar-center">
+					<a href="#" class="nav-link" id="toggle-painting">Toggle Paint</a>
+					<a href="#" class="nav-link" id="clear-painting">Clear Paint</a>
+					<a href="#" class="nav-link" id="reveal-resume">Reveal Resume</a>
+					<a href="#" class="nav-link" id="reveal-portfolio">Reveal Portfolio</a>
+					<a href="#" class="nav-link" id="reveal-contact">Reveal Contact</a>
+				</div>
+				<div class="navbar-right">
+					<!-- Empty for now, can be used for future elements -->
 				</div>
 			</div>
 		</nav>

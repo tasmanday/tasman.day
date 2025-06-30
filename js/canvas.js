@@ -7,7 +7,7 @@ export function initCanvas() {
 	const brushSize = 80;
 
 	function resizeCanvas() {
-		const navbar = document.querySelector('.navbar');
+		const navbar = document.querySelector('.custom-navbar');
 		const navbarHeight = navbar.offsetHeight;
 
 		canvas.width = window.innerWidth;

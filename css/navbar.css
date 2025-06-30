@@ -1,4 +1,4 @@
-.navbar{
+/* .navbar{
 	top: 0;
     left: 0;
 	z-index: 40;
@@ -62,4 +62,156 @@
 	border-color: rgb(31, 154, 163);
 	box-shadow: 0 0 0 0.2rem rgba(31, 154, 163, 0.5);
 	background-color: rgba(31, 154, 163, 0.1);
+}
+ */
+
+
+ .custom-navbar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 56px;
+	background-color: #182433;
+	color: #FFCC7F;
+	z-index: 40;
+	display: flex;
+	align-items: center;
+}
+
+.navbar-container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 0 20px;
+	height: 100%;
+}
+
+.navbar-left {
+	display: flex;
+	align-items: center;
+	gap: 20px;
+}
+
+.navbar-center {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.navbar-right {
+	display: flex;
+	align-items: center;
+}
+
+.nav-link {
+	color: #FFCC7F;
+	text-decoration: none;
+	padding: 8px 12px;
+	border-radius: 4px;
+	transition: all 0.2s ease;
+	font-size: 14px;
+}
+
+.nav-link:hover {
+	color: #ffffff;
+	background-color: rgba(255, 204, 127, 0.1);
+}
+
+.home-link {
+	font-weight: bold;
+}
+
+/* Dropdown styles */
+.dropdown {
+	position: relative;
+	display: inline-block;
+}
+
+.dropdown-toggle {
+	background: none;
+	border: none;
+	color: #FFCC7F;
+	padding: 8px 12px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 14px;
+	transition: all 0.2s ease;
+}
+
+.dropdown-toggle:hover {
+	color: #ffffff;
+	background-color: rgba(255, 204, 127, 0.1);
+}
+
+.dropdown-menu {
+	display: none;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: #182433;
+	border: 1px solid #FFCC7F;
+	border-radius: 4px;
+	min-width: 150px;
+	z-index: 50;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown:hover .dropdown-menu {
+	display: block;
+}
+
+.dropdown-item {
+	color: #FFCC7F;
+	text-decoration: none;
+	padding: 10px 15px;
+	display: block;
+	transition: all 0.2s ease;
+	font-size: 14px;
+}
+
+.dropdown-item:hover {
+	background-color: #501B27;
+	color: #ffffff;
+}
+
+/* Special styling for reveal buttons */
+#reveal-resume,
+#reveal-portfolio,
+#reveal-contact {
+	border: 2px solid transparent;
+	transition: all 0.2s ease;
+}
+
+#reveal-resume:focus,
+#reveal-resume:hover,
+#reveal-portfolio:focus,
+#reveal-portfolio:hover,
+#reveal-contact:focus,
+#reveal-contact:hover {
+	border-color: rgb(31, 154, 163);
+	box-shadow: 0 0 0 0.2rem rgba(31, 154, 163, 0.5);
+	background-color: rgba(31, 154, 163, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+	.navbar-container {
+		padding: 0 10px;
+	}
+	
+	.navbar-center {
+		gap: 8px;
+	}
+	
+	.nav-link {
+		padding: 6px 8px;
+		font-size: 12px;
+	}
+	
+	.dropdown-toggle {
+		padding: 6px 8px;
+		font-size: 12px;
+	}
 }
