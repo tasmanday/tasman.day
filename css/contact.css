@@ -119,8 +119,9 @@
 }
 
 .home.fs-button {
-    background-color: #f3da6a;
-    color: #916f01;
+    background-color: transparent;
+    border: 2px solid #f3da6a;
+    color: #f3da6a;
 }
 
 .home.fs-label {
@@ -129,6 +130,7 @@
 
 .home.fs-button:hover {
     background-color: #f79540;
+    color: #361900
 }
 
 .home.fs-input:focus, .home.fs-textarea:focus {
