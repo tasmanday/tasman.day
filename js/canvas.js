@@ -5,6 +5,7 @@ export function initCanvas() {
 	let painting = false;
 	let brushColor = '#013740';
 	const brushSize = 80;
+	let activeRevealButton = 'reveal-resume';
 
 	function resizeCanvas() {
 		const navbar = document.querySelector('.custom-navbar');
@@ -37,6 +38,26 @@ export function initCanvas() {
 
 	let isPaintingMode = false;
 
+	function setActiveButton(buttonId) {
+		// Remove active class from all reveal buttons
+		document.getElementById('reveal-resume').classList.remove('active');
+		document.getElementById('reveal-portfolio').classList.remove('active');
+		document.getElementById('reveal-contact').classList.remove('active');
+		
+		// Add active class to the specified button
+		if (buttonId) {
+			document.getElementById(buttonId).classList.add('active');
+			activeRevealButton = buttonId;
+		}
+	}
+
+	// Function to clear active button styling
+	function clearActiveButton() {
+		document.getElementById('reveal-resume').classList.remove('active');
+		document.getElementById('reveal-portfolio').classList.remove('active');
+		document.getElementById('reveal-contact').classList.remove('active');
+	}
+
 	document.getElementById('toggle-painting').addEventListener('click', (e) => {
 		e.preventDefault();
 		isPaintingMode = !isPaintingMode;
@@ -44,9 +65,13 @@ export function initCanvas() {
 		if (isPaintingMode) {
 			enablePaintingMode();
 			e.target.textContent = 'Enable Links';
+			if (activeRevealButton) {
+				setActiveButton(activeRevealButton);
+			}
 		} else {
 			disablePaintingMode();
 			e.target.textContent = 'Continue Painting';
+			clearActiveButton();
 		}
 	});
 
@@ -124,6 +149,8 @@ export function initCanvas() {
 			drawingInstruction.textContent = 'Draw below to help my resume stand out from the crowd!';
 		}
 
+		setActiveButton('reveal-resume');
+
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
@@ -145,6 +172,8 @@ export function initCanvas() {
 		if (drawingInstruction) {
 			drawingInstruction.textContent = 'Draw below to help my portfolio stand out from the crowd!';
 		}
+
+		setActiveButton('reveal-portfolio');
 
 		if (!isPaintingMode) {
 			enablePaintingMode();
@@ -168,6 +197,8 @@ export function initCanvas() {
 			drawingInstruction.textContent = 'Draw below to help my contact form stand out from the crowd!';
 		}
 
+		setActiveButton('reveal-contact');
+
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
@@ -182,4 +213,5 @@ export function initCanvas() {
 	enablePaintingMode();
 	isPaintingMode = true;
 	document.getElementById('toggle-painting').textContent = 'Enable Links';
+	setActiveButton('reveal-resume');
 }
