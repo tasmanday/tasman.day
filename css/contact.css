@@ -55,7 +55,8 @@
     border-radius: 4px;
     background-color: #fff9e1;
     transition: border-color 0.3s ease;
-    color: #634800
+    color: #634800;
+    box-sizing: border-box;
 }
 
 .fs-input:focus, .fs-textarea:focus {
@@ -139,6 +140,7 @@
     box-shadow: 0 0 0 2px rgba(211, 84, 0, 0.2);
     background-color: rgba(255, 249, 225, 0.15);
     transition: background-color 0.3s ease;
+    box-sizing: border-box;
 }
 
 .home.contact-form {
