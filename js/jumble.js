@@ -14,31 +14,6 @@ const textFragments = [
 	'NULL', 'NaN', 'SEGFAULT', '404', ':)', ':P', '¯\\_(ツ)_/¯'
 ];
 
-/* export function createJumble() {
-	const container = document.getElementById('jumbleLayer');
-	const pixelsPerFragment = 1750;
-	const screenWidth = window.innerWidth;
-	const screenHeight = window.innerHeight;
-	const count = Math.floor((screenWidth * screenHeight) / pixelsPerFragment);
-
-	for (let i = 0; i < count; i++) {
-		const span = document.createElement('span');
-		span.textContent = randomItem(textFragments);
-		span.style.color = randomItem(colors);
-		span.style.left = `${Math.random() * 120 - 20}vw`;
-		span.style.top = `${Math.random() * 100}vh`;
-		span.style.fontSize = `${Math.random() * 3.5 + 1.5}rem`;
-		span.style.transform = `rotate(${Math.random() * 360}deg)`;
-		span.style.opacity = Math.random() * 0.1 + 0.9;
-
-		container.appendChild(span);
-	}
-}
-
-function randomItem(arr) {
-	return arr[Math.floor(Math.random() * arr.length)];
-} */
-
 export function createJumble() {
 	const container = document.getElementById('jumbleLayer');
 	const canvas = document.createElement('canvas');

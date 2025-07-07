@@ -9,7 +9,7 @@
 	padding: 1rem 2rem;
 	background: #182433;
 	text-align: center;
-	font-family: 'Urbanist', sans-serif;
+
 	width: 95vw;
 	max-width: 800px;
 	box-sizing: border-box;
@@ -20,7 +20,6 @@
   
   .tasman-header h1 {
 	margin: 0;
-	font-family: 'Urbanist', sans-serif;
 	font-size: 2.5rem;
 	color: #FFCC7F;
 	margin-top: 1rem;

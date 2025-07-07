@@ -64,7 +64,7 @@ export function initCanvas() {
 
 		if (isPaintingMode) {
 			enablePaintingMode();
-			e.target.textContent = 'Enable Links';
+			e.target.textContent = 'Enable Interaction';
 			if (activeRevealButton) {
 				setActiveButton(activeRevealButton);
 			}
@@ -154,7 +154,7 @@ export function initCanvas() {
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Enable Links';
+			document.getElementById('toggle-painting').textContent = 'Enable Interaction';
 		}
 	});
 
@@ -178,7 +178,7 @@ export function initCanvas() {
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Enable Links';
+			document.getElementById('toggle-painting').textContent = 'Enable Interaction';
 		}
 	});
 
@@ -202,7 +202,7 @@ export function initCanvas() {
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Enable Links';
+			document.getElementById('toggle-painting').textContent = 'Enable Interaction';
 		}
 	});
 
@@ -212,6 +212,6 @@ export function initCanvas() {
 	contactLayer.style.zIndex = 11;
 	enablePaintingMode();
 	isPaintingMode = true;
-	document.getElementById('toggle-painting').textContent = 'Enable Links';
+	document.getElementById('toggle-painting').textContent = 'Enable Interaction';
 	setActiveButton('reveal-resume');
 }
