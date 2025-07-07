@@ -4,7 +4,8 @@
 }
 
 .resume-header {
-	top: 120px;
+	/* top: 120px; */
+	margin: 3rem auto;
 }
 
 
@@ -17,8 +18,8 @@ body {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-evenly;
-	position: absolute;
-	top: 224px;
+	/* position: absolute;
+	top: 224px; */
 	left: 0;
 	right: 0;
 	width: 90vw;
@@ -133,7 +134,7 @@ body {
 
 .home.resume-container {
 	mix-blend-mode: screen;
-	top: 290px;
+	/* top: 290px; */
 }
 
 .home.resume-skills, .home.resume-blurb {
