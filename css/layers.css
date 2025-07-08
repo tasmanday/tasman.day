@@ -4,11 +4,11 @@
 
 .layer {
 	position: absolute;
-	top: 56px;
+	top: var(--navbar-height);
 	/*top: var(--navbar-height);*/
 	left: 0;
 	width: 100vw;
-	height: calc(100vh - 56px);
+	height: calc(100vh - var(--navbar-height));
 	/*height: calc(100vh - var(--navbar-height));*/
 }
 

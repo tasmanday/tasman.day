@@ -2,8 +2,8 @@
 .home-container {
     position: relative;
     width: 100%;
-    height: calc(100vh - 56px); /* Subtract navbar height */
-    margin-top: 56px; /* Account for navbar */
+    height: calc(100vh - var(--navbar-height)); /* Subtract navbar height */
+    margin-top: var(--navbar-height); /* Account for navbar */
     display: flex;
     flex-direction: column;
     align-items: center;

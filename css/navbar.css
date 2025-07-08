@@ -4,7 +4,7 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 56px;
+	height: var(--navbar-height);
 	background-color: #182433;
 	color: #FFCC7F;
 	z-index: 40;
@@ -147,21 +147,21 @@
 
 /* Responsive design */
 @media (max-width: 768px) {
-	.navbar-container {
-		padding: 0 10px;
-	}
-	
-	.navbar-center {
-		gap: 8px;
-	}
-	
-	.nav-link {
-		padding: 6px 8px;
-		font-size: 12px;
-	}
-	
-	.dropdown-toggle {
-		padding: 6px 8px;
-		font-size: 12px;
-	}
+    .navbar-container {
+        padding: 0 10px;
+    }
+    
+    .navbar-center {
+        gap: 8px;
+    }
+    
+    .nav-link {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
+    
+    .dropdown-toggle {
+        padding: 6px 8px;
+        font-size: 12px;
+    }
 }
