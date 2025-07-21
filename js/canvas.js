@@ -11,9 +11,11 @@ export function initCanvas() {
 		const navbar = document.querySelector('.custom-navbar');
 		const navbarHeight = navbar.offsetHeight;
 
-		canvas.width = window.innerWidth;
-		canvas.height = window.innerHeight - navbarHeight;
+		// Use document.documentElement dimensions to account for scroll bars
+		canvas.width = document.documentElement.clientWidth;
+		canvas.height = document.documentElement.clientHeight - navbarHeight;
 		canvas.style.top = `${navbarHeight}px`;
+		canvas.style.left = '0px';
 	}
 	resizeCanvas();
 	window.addEventListener('resize', resizeCanvas);
@@ -28,8 +30,15 @@ export function initCanvas() {
 	}
 	function draw(e) {
 		if (!painting) return;
+		
+		// Get the navbar height to account for canvas offset
+		const navbar = document.querySelector('.custom-navbar');
+		const navbarHeight = navbar.offsetHeight;
+		
+		// Calculate coordinates relative to canvas
 		const x = e.clientX || (e.touches && e.touches[0].clientX);
-		const y = e.clientY || (e.touches && e.touches[0].clientY);
+		const y = (e.clientY || (e.touches && e.touches[0].clientY)) - navbarHeight;
+		
 		ctx.fillStyle = brushColor;
 		ctx.beginPath();
 		ctx.arc(x, y, brushSize, 0, Math.PI * 2);
@@ -112,6 +121,14 @@ export function initCanvas() {
 		canvas.addEventListener('touchstart', startPosition);
 		canvas.addEventListener('touchend', endPosition);
 		canvas.addEventListener('touchmove', draw);
+		
+		// Prevent default touch scrolling (single finger)
+		canvas.addEventListener('touchstart', preventScroll, { passive: false });
+		canvas.addEventListener('touchmove', preventScroll, { passive: false });
+		
+		// Always prevent viewport scrolling to avoid white slivers
+		document.body.style.overflow = 'hidden';
+		document.documentElement.style.overflow = 'hidden';
 	}
 
 	function disablePaintingMode() {
@@ -141,6 +158,30 @@ export function initCanvas() {
 		canvas.removeEventListener('touchstart', startPosition);
 		canvas.removeEventListener('touchend', endPosition);
 		canvas.removeEventListener('touchmove', draw);
+		
+		// Remove scroll prevention
+		canvas.removeEventListener('touchstart', preventScroll);
+		canvas.removeEventListener('touchmove', preventScroll);
+		
+		// Keep viewport scrolling disabled but make home-container scrollable
+		document.body.style.overflow = 'hidden';
+		document.documentElement.style.overflow = 'hidden';
+		
+		// Make the home-container scrollable
+		const homeContainer = document.querySelector('.home-container');
+		if (homeContainer) {
+			homeContainer.style.overflowY = 'auto';
+			homeContainer.style.overflowX = 'hidden';
+			homeContainer.style.maxHeight = 'calc(100vh - var(--navbar-height))';
+		}
+	}
+
+	// Function to prevent default touch scrolling unless using 2+ fingers
+	function preventScroll(e) {
+		if (e.touches.length === 1) {
+			e.preventDefault();
+		}
+		// Allow default behavior for 2+ finger touches (pinch-to-zoom, etc.)
 	}
 
 	document.getElementById('clear-painting').addEventListener('click', (e) => {
@@ -218,7 +259,7 @@ export function initCanvas() {
 
 		const drawingInstruction = document.querySelector('.drawing-instruction');
 		if (drawingInstruction) {
-			drawingInstruction.textContent = 'Draw below to help my contact form stand out from the crowd!';
+			drawingInstruction.textContent = 'Draw below to reveal the contact form!';
 		}
 
 		setActiveButton('reveal-contact');
