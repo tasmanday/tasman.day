@@ -16,7 +16,7 @@
 
 @media (max-width: 768px) {
     :root {
-        --navbar-height: 220px;
+        --navbar-height: 100px;
     }
 }
 

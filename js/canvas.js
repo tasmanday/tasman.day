@@ -64,13 +64,27 @@ export function initCanvas() {
 
 		if (isPaintingMode) {
 			enablePaintingMode();
-			e.target.textContent = 'Enable Interaction';
+			// Update both text and icon for small screens
+			const toggleButton = e.target.closest('#toggle-painting');
+			const textSpan = toggleButton.querySelector('.nav-text');
+			const icon = toggleButton.querySelector('.nav-icon');
+			
+			if (textSpan) textSpan.textContent = 'Enable Interaction';
+			if (icon) icon.alt = 'Enable Interaction';
+			
 			if (activeRevealButton) {
 				setActiveButton(activeRevealButton);
 			}
 		} else {
 			disablePaintingMode();
-			e.target.textContent = 'Continue Painting';
+			// Update both text and icon for small screens
+			const toggleButton = e.target.closest('#toggle-painting');
+			const textSpan = toggleButton.querySelector('.nav-text');
+			const icon = toggleButton.querySelector('.nav-icon');
+			
+			if (textSpan) textSpan.textContent = 'Continue Painting';
+			if (icon) icon.alt = 'Continue Painting';
+			
 			clearActiveButton();
 		}
 	});
@@ -154,7 +168,12 @@ export function initCanvas() {
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Enable Interaction';
+			const toggleButton = document.getElementById('toggle-painting');
+			const textSpan = toggleButton.querySelector('.nav-text');
+			const icon = toggleButton.querySelector('.nav-icon');
+			
+			if (textSpan) textSpan.textContent = 'Enable Interaction';
+			if (icon) icon.alt = 'Enable Interaction';
 		}
 	});
 
@@ -178,7 +197,12 @@ export function initCanvas() {
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Enable Interaction';
+			const toggleButton = document.getElementById('toggle-painting');
+			const textSpan = toggleButton.querySelector('.nav-text');
+			const icon = toggleButton.querySelector('.nav-icon');
+			
+			if (textSpan) textSpan.textContent = 'Enable Interaction';
+			if (icon) icon.alt = 'Enable Interaction';
 		}
 	});
 
@@ -202,7 +226,12 @@ export function initCanvas() {
 		if (!isPaintingMode) {
 			enablePaintingMode();
 			isPaintingMode = true;
-			document.getElementById('toggle-painting').textContent = 'Enable Interaction';
+			const toggleButton = document.getElementById('toggle-painting');
+			const textSpan = toggleButton.querySelector('.nav-text');
+			const icon = toggleButton.querySelector('.nav-icon');
+			
+			if (textSpan) textSpan.textContent = 'Enable Interaction';
+			if (icon) icon.alt = 'Enable Interaction';
 		}
 	});
 
@@ -212,6 +241,12 @@ export function initCanvas() {
 	contactLayer.style.zIndex = 11;
 	enablePaintingMode();
 	isPaintingMode = true;
-	document.getElementById('toggle-painting').textContent = 'Enable Interaction';
+	const toggleButton = document.getElementById('toggle-painting');
+	const textSpan = toggleButton.querySelector('.nav-text');
+	const icon = toggleButton.querySelector('.nav-icon');
+
+	if (textSpan) textSpan.textContent = 'Enable Interaction';
+	if (icon) icon.alt = 'Enable Interaction';
+
 	setActiveButton('reveal-resume');
 }
