@@ -119,6 +119,7 @@
 #reveal-contact {
 	border: 2px solid transparent;
 	transition: all 0.2s ease;
+	text-align: center;
 }
 
 #reveal-resume:focus,
@@ -163,6 +164,7 @@
     
     .navbar-center {
         gap: 8px;
+		max-width: 250px;
     }
     
     .nav-link {
@@ -197,7 +199,8 @@
     
     /* Center the icons */
     .navbar-left, .navbar-right {
-        gap: 5px;
+        gap: 4px;
+		flex-direction: column;
     }
     
     /* Make dropdown button work better with icon */
@@ -215,6 +218,6 @@
 	#reveal-resume,
 	#reveal-portfolio,
 	#reveal-contact {
-		font-size: 16px;
+		font-size: 14px;
 	}
 }
