@@ -18,7 +18,39 @@ export function initCanvas() {
 		canvas.style.left = '0px';
 	}
 	resizeCanvas();
-	window.addEventListener('resize', resizeCanvas);
+	window.addEventListener('resize', () => {
+		resizeCanvas();
+		
+		// Handle painting mode changes on resize
+		const isLargeScreen = window.innerWidth > 768;
+		const wasLargeScreen = !isPaintingMode && document.body.style.overflow !== 'hidden';
+		
+		if (isLargeScreen && !wasLargeScreen) {
+			// Switched to large screen - enable normal scrolling
+			disablePaintingMode();
+			isPaintingMode = false;
+			const toggleButton = document.getElementById('toggle-painting');
+			const textSpan = toggleButton.querySelector('.nav-text');
+			const icon = toggleButton.querySelector('.nav-icon');
+
+			if (textSpan) textSpan.textContent = 'Continue Painting';
+			if (icon) icon.alt = 'Continue Painting';
+			clearActiveButton();
+		} else if (!isLargeScreen && wasLargeScreen) {
+			// Switched to small screen - enable painting mode
+			enablePaintingMode();
+			isPaintingMode = true;
+			const toggleButton = document.getElementById('toggle-painting');
+			const textSpan = toggleButton.querySelector('.nav-text');
+			const icon = toggleButton.querySelector('.nav-icon');
+
+			if (textSpan) textSpan.textContent = 'Enable Interaction';
+			if (icon) icon.alt = 'Enable Interaction';
+			if (activeRevealButton) {
+				setActiveButton(activeRevealButton);
+			}
+		}
+	});
 
 	function startPosition(e) {
 		painting = true;
@@ -126,7 +158,7 @@ export function initCanvas() {
 		canvas.addEventListener('touchstart', preventScroll, { passive: false });
 		canvas.addEventListener('touchmove', preventScroll, { passive: false });
 		
-		// Always prevent viewport scrolling to avoid white slivers
+		// Prevent viewport scrolling to avoid white slivers
 		document.body.style.overflow = 'hidden';
 		document.documentElement.style.overflow = 'hidden';
 	}
@@ -163,16 +195,31 @@ export function initCanvas() {
 		canvas.removeEventListener('touchstart', preventScroll);
 		canvas.removeEventListener('touchmove', preventScroll);
 		
-		// Keep viewport scrolling disabled but make home-container scrollable
-		document.body.style.overflow = 'hidden';
-		document.documentElement.style.overflow = 'hidden';
-		
-		// Make the home-container scrollable
-		const homeContainer = document.querySelector('.home-container');
-		if (homeContainer) {
-			homeContainer.style.overflowY = 'auto';
-			homeContainer.style.overflowX = 'hidden';
-			homeContainer.style.maxHeight = 'calc(100vh - var(--navbar-height))';
+		// Check screen size to determine scroll behavior
+		if (window.innerWidth <= 768) {
+			// On small screens, keep viewport scrolling disabled but make home-container scrollable
+			document.body.style.overflow = 'hidden';
+			document.documentElement.style.overflow = 'hidden';
+			
+			// Make the home-container scrollable
+			const homeContainer = document.querySelector('.home-container');
+			if (homeContainer) {
+				homeContainer.style.overflowY = 'auto';
+				homeContainer.style.overflowX = 'hidden';
+				homeContainer.style.maxHeight = 'calc(100vh - var(--navbar-height))';
+			}
+		} else {
+			// On large screens, enable normal scrolling
+			document.body.style.overflow = '';
+			document.documentElement.style.overflow = '';
+			
+			// Reset home-container scrolling
+			const homeContainer = document.querySelector('.home-container');
+			if (homeContainer) {
+				homeContainer.style.overflowY = '';
+				homeContainer.style.overflowX = '';
+				homeContainer.style.maxHeight = '';
+			}
 		}
 	}
 
@@ -280,14 +327,29 @@ export function initCanvas() {
 	resumeLayer.style.zIndex = 25;
 	portfolioLayer.style.zIndex = 10;
 	contactLayer.style.zIndex = 11;
-	enablePaintingMode();
-	isPaintingMode = true;
-	const toggleButton = document.getElementById('toggle-painting');
-	const textSpan = toggleButton.querySelector('.nav-text');
-	const icon = toggleButton.querySelector('.nav-icon');
+	
+	// Check screen size for initial behavior
+	if (window.innerWidth <= 768) {
+		// On small screens, start in painting mode
+		enablePaintingMode();
+		isPaintingMode = true;
+		const toggleButton = document.getElementById('toggle-painting');
+		const textSpan = toggleButton.querySelector('.nav-text');
+		const icon = toggleButton.querySelector('.nav-icon');
 
-	if (textSpan) textSpan.textContent = 'Enable Interaction';
-	if (icon) icon.alt = 'Enable Interaction';
+		if (textSpan) textSpan.textContent = 'Enable Interaction';
+		if (icon) icon.alt = 'Enable Interaction';
+	} else {
+		// On large screens, start with normal scrolling enabled
+		disablePaintingMode();
+		isPaintingMode = false;
+		const toggleButton = document.getElementById('toggle-painting');
+		const textSpan = toggleButton.querySelector('.nav-text');
+		const icon = toggleButton.querySelector('.nav-icon');
+
+		if (textSpan) textSpan.textContent = 'Continue Painting';
+		if (icon) icon.alt = 'Continue Painting';
+	}
 
 	setActiveButton('reveal-resume');
 }
