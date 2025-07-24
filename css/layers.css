@@ -18,6 +18,16 @@
 	position: fixed;
 	background-color: #182433;
 	z-index: 1;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 100dvh;
+	width: 100dvw;
+}
+
+.layer.background.navy h1 {
+	color: #FFCC7F;
 }
 
 .layer.background.teal {
