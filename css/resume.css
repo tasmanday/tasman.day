@@ -126,6 +126,7 @@ body {
 .home.resume-container {
 	position: absolute;
 	mix-blend-mode: screen;
+	padding-bottom: 1.5rem;
 }
 
 .home.resume-skills, .home.resume-blurb {
