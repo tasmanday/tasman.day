@@ -9,6 +9,7 @@
     align-items: center;
     justify-content: flex-start;
     box-sizing: border-box;
+	overflow-y: auto;
 }
 
 .home-content-container {
@@ -16,5 +17,4 @@
     position: relative;
     width: 100%;
     min-height: 100dvh;
-	padding-bottom: 8dvh;
 }

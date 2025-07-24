@@ -17,8 +17,26 @@ export function initCanvas() {
 		canvas.style.top = `${navbarHeight}px`;
 		canvas.style.left = '0px';
 	}
-	resizeCanvas();
-	window.addEventListener('resize', resizeCanvas);
+
+	function resizeHomeContainer() {
+		const navbar = document.querySelector('.custom-navbar');
+		const navbarHeight = navbar.offsetHeight;
+
+		const homeContainer = document.querySelector('.home-container');
+		if (homeContainer) {
+			homeContainer.style.height = `calc(100dvh - ${navbarHeight}px)`;
+			homeContainer.style.maxHeight = `calc(100dvh - ${navbarHeight}px)`;
+			homeContainer.style.marginTop = `${navbarHeight}px`;
+		}
+	}
+
+	function handleResize() {
+		resizeCanvas();
+		resizeHomeContainer();
+	}
+
+	window.addEventListener('resize', handleResize);
+	handleResize();
 
 	function startPosition(e) {
 		painting = true;
@@ -127,8 +145,8 @@ export function initCanvas() {
 		canvas.addEventListener('touchmove', preventScroll, { passive: false });
 		
 		// Always prevent viewport scrolling to avoid white slivers
-		document.body.style.overflow = 'hidden';
-		document.documentElement.style.overflow = 'hidden';
+		/*document.body.style.overflow = 'hidden';
+		document.documentElement.style.overflow = 'hidden';*/
 	}
 
 	function disablePaintingMode() {
@@ -160,20 +178,20 @@ export function initCanvas() {
 		canvas.removeEventListener('touchmove', draw);
 		
 		// Remove scroll prevention
-		canvas.removeEventListener('touchstart', preventScroll);
-		canvas.removeEventListener('touchmove', preventScroll);
+		canvas.removeEventListener('touchstart', preventScroll, { passive: false });
+		canvas.removeEventListener('touchmove', preventScroll, { passive: false });
 		
 		// Keep viewport scrolling disabled but make home-container scrollable
-		document.body.style.overflow = 'hidden';
-		document.documentElement.style.overflow = 'hidden';
+		/*document.body.style.overflow = 'hidden';
+		document.documentElement.style.overflow = 'hidden';*/
 		
 		// Make the home-container scrollable
-		const homeContainer = document.querySelector('.home-container');
+		/*const homeContainer = document.querySelector('.home-container');
 		if (homeContainer) {
 			homeContainer.style.overflowY = 'auto';
 			homeContainer.style.overflowX = 'hidden';
 			homeContainer.style.maxHeight = 'calc(100vh - var(--navbar-height))';
-		}
+		}*/
 	}
 
 	// Function to prevent default touch scrolling unless using 2+ fingers
