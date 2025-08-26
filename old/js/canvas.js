@@ -22,7 +22,7 @@ function resizeCanvas() {
 	canvas.style.left = '0px';
 }
 
-function resizeHomeContainer() {
+/* function resizeHomeContainer() {
 	const navbar = document.querySelector('.custom-navbar');
 	const navbarHeight = navbar.offsetHeight;
 
@@ -32,11 +32,11 @@ function resizeHomeContainer() {
 		homeContainer.style.maxHeight = `calc(100dvh - ${navbarHeight}px)`;
 		homeContainer.style.marginTop = `${navbarHeight}px`;
 	}
-}
+} */
 
 function handleResize() {
 	resizeCanvas();
-	resizeHomeContainer();
+	// resizeHomeContainer();
 }
 
 // Drawing functions
@@ -170,6 +170,12 @@ function setLayerZIndex(resumeZ, portfolioZ, contactZ) {
 	contactLayer.style.zIndex = contactZ;
 }
 
+function setLayerVisibility(showResume, showPortfolio, showContact) {
+	resumeLayer.style.display = showResume ? 'flex' : 'none';
+	portfolioLayer.style.display = showPortfolio ? 'flex' : 'none';
+	contactLayer.style.display = showContact ? 'flex' : 'none';
+}
+
 function updateDrawingInstruction(text) {
 	const drawingInstruction = document.querySelector('.drawing-instruction');
 	if (drawingInstruction) {
@@ -208,6 +214,7 @@ function handleRevealResume(e) {
 	brushColor = '#013740'; // Teal
 
 	setLayerZIndex(25, 10, 11);
+	setLayerVisibility(true, false, false);
 	updateDrawingInstruction('Draw below to help my resume stand out from the crowd!');
 	setActiveButton('reveal-resume');
 
@@ -225,6 +232,7 @@ function handleRevealPortfolio(e) {
 	brushColor = '#501B27'; // Burgundy red
 
 	setLayerZIndex(10, 25, 11);
+	setLayerVisibility(false, true, false);
 	updateDrawingInstruction('Draw below to help my portfolio stand out from the crowd!');
 	setActiveButton('reveal-portfolio');
 
@@ -242,6 +250,7 @@ function handleRevealContact(e) {
 	brushColor = '#916f01'; // Dark yellow
 
 	setLayerZIndex(10, 11, 25);
+	setLayerVisibility(false, false, true);
 	updateDrawingInstruction('Draw below to reveal the contact form!');
 	setActiveButton('reveal-contact');
 
@@ -278,6 +287,7 @@ function initializeCanvas() {
 
 	// Initial setup
 	setLayerZIndex(25, 10, 11);
+	setLayerVisibility(true, false, false);
 	enablePaintingMode();
 	isPaintingMode = true;
 	updateToggleButtonText('Enable Interaction', 'Enable Interaction');

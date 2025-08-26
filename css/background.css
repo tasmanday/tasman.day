@@ -1,0 +1,19 @@
+.background {
+	position: fixed;
+	top: var(--navbar-height);
+	left: 0;
+	width: 100vw;
+	height: calc(100vh - var(--navbar-height));
+	background-color: #182433;
+	z-index: -1;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	display: flex;
+	height: 100dvh;
+	width: 100dvw;
+}
+
+.background h1 {
+	color: #FFCC7F;
+}

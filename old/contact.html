@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="css/styles.css" rel="stylesheet">
+		<link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+        <title>Tasman Day - Contact Me</title>
+    </head>
+
+    <body>
+
+		<!-- Navbar -->
+		<nav class="custom-navbar">
+			<div class="navbar-container">
+				<div class="navbar-left">
+					<a href="./" class="nav-link home-link">Home</a>
+					<div class="dropdown">
+						<button class="dropdown-toggle">Jump to Page</button>
+						<div class="dropdown-menu">
+							<a href="resume.html" class="dropdown-item">Resume</a>
+							<a href="portfolio.html" class="dropdown-item">Portfolio</a>
+							<a href="contact.html" class="dropdown-item">Contact Me</a>
+						</div>
+					</div>
+				</div>
+				<div class="navbar-center">
+					<!-- Empty for now -->
+				</div>
+				<div class="navbar-right">
+					<!-- Empty for now -->
+				</div>
+			</div>
+		</nav>
+
+		<!-- Background -->
+		<div class="layer background yellow"></div>
+
+		<div class="home-container">
+
+			<!-- Header -->
+			<div class="tasman-header contact-header">
+				<h1>TASMAN DAY</h1>
+				<h2>Software Developer</h2>
+			</div>
+
+			<div class ="contact-form">
+				<form
+					action="https://formspree.io/f/mjkrrakg"
+					class="fs-form"
+					target="_top"
+					method="POST"
+					data-redirect="false"
+				>
+					<div class="fs-field">
+						<label class="fs-label" for="name">Your Name</label>
+						<input class="fs-input" id="name" name="name" required />
+					</div>
+					<div class="fs-field">
+						<label class="fs-label" for="email">Your Email</label>
+						<input class="fs-input" id="email" name="email" required />
+					<!--	<p class="fs-description">
+						This will help me respond to your query via an email.
+						</p> -->
+					</div>
+					<div class="fs-field">
+						<label class="fs-label" for="message">Message</label>
+						<textarea
+						class="fs-textarea"
+						id="message"
+						name="message"
+						required
+						></textarea>
+					<!--	<p class="fs-description">What would you like to discuss?</p> -->
+					</div>
+					<div class="fs-button-group">
+						<button class="fs-button" type="submit">Submit</button>
+					</div>
+					</form>				  
+			</div>
+
+		</div>
+	</body>

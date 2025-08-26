@@ -1,6 +1,6 @@
 /* Home Container Styles */
 .home-container {
-    position: relative;
+    position: absolute;
     width: 100%;
     min-height: calc(100vh - var(--navbar-height)); /* Subtract navbar height */
     margin-top: var(--navbar-height); /* Account for navbar */
@@ -10,11 +10,12 @@
     justify-content: flex-start;
     box-sizing: border-box;
 	overflow-y: auto;
+	z-index: 20;
 }
 
 .home-content-container {
 	display: none;
     position: relative;
     width: 100%;
-    min-height: 100dvh;
+    /* min-height: 100dvh; */
 }

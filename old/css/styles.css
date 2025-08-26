@@ -1,6 +1,8 @@
 @import url('navbar.css');
-@import url('background.css');
+@import url('layers.css');
 @import url('header.css');
+@import url('home-container.css');
+@import url('text.css');
 @import url('resume.css');
 @import url('portfolio.css');
 @import url('contact.css');
@@ -19,18 +21,11 @@
 }
 
 body {
-    font-family: 'Urbanist', sans-serif;
-    padding-top: var(--navbar-height);
- 
-    margin: 0;
+	font-family: 'Urbanist', sans-serif;
+	padding-top: var(--navbar-height);
+	margin: 0;
 }
 
-.home-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    box-sizing: border-box;
-	z-index: 20;
+html, body {
+	height: 100%;
 }
