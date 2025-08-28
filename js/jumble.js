@@ -17,8 +17,7 @@ const textFragments = [
 export function createJumble() {
 	const container = document.getElementById('jumble');
 	const jumbleCanvas = document.createElement('canvas');
-	jumbleCanvas.style.width = '100%';
-	jumbleCanvas.style.height = '100%';
+	jumbleCanvas.classList.add('jumble_canvas');
 	container.appendChild(jumbleCanvas);
 	
 	const ctx = jumbleCanvas.getContext('2d');
@@ -29,6 +28,7 @@ export function createJumble() {
 		
 		jumbleCanvas.width = window.innerWidth;
 		jumbleCanvas.height = window.innerHeight - navbarHeight;
+		
 		jumbleCanvas.style.top = `${navbarHeight}px`;
 		drawJumble();
 	}
