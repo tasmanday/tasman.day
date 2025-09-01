@@ -22,6 +22,20 @@ export function createJumble() {
 	
 	const ctx = jumbleCanvas.getContext('2d');
 	
+	let lastWidth = window.innerWidth;
+	let lastHeight = window.innerHeight;
+
+	function onResize() {
+		const width = window.innerWidth;
+		const height = window.innerHeight;
+
+		if (width !== lastWidth || Math.abs(height - lastHeight) > 100) {
+			lastWidth = width;
+			lastHeight = height;
+			resizeCanvas();
+		}
+	}
+
 	function resizeCanvas() {
 		const navbar = document.querySelector('.custom-navbar');
 		const navbarHeight = navbar.offsetHeight;
@@ -63,7 +77,7 @@ export function createJumble() {
 	
 	// Initial setup
 	resizeCanvas();
-	window.addEventListener('resize', resizeCanvas);
+	window.addEventListener('resize', onResize);
 }
 
 function randomItem(arr) {
