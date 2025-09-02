@@ -123,11 +123,12 @@ body {
 
 
 
-.home.resume-container {
+#resume-home {
 	position: relative;
 	mix-blend-mode: screen;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
+	display: none;
 }
 
 .home.resume-skills, .home.resume-blurb {

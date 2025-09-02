@@ -137,11 +137,12 @@ body {
     transition: fill 0.2s;
 }
 
-.home.portfolio-container {
+#portfolio-home {
     mix-blend-mode: screen;
     position: relative;
 	padding-top: 1.5rem;
 	padding-bottom: 1.5rem;
+	display: none;
 }
 
 .home.project-container {
