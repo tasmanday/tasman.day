@@ -7,6 +7,19 @@ let isPaintingMode = true
 let painting = false;
 let brushColor = '#01262b';
 let brushSize = 80;
+let lastWidth = window.innerWidth;
+let lastHeight = window.innerHeight;
+
+function onResize() {
+	const width = window.innerWidth;
+	const height = window.innerHeight;
+
+	if (width !== lastWidth || Math.abs(height - lastHeight) > 100) {
+		lastWidth = width;
+		lastHeight = height;
+		resizeCanvas();
+	}
+}
 
 function resizeCanvas() {
 	paintCanvas.width = window.innerWidth;
@@ -21,7 +34,7 @@ function setupEventListeners() {
 	document.getElementById('reveal-resume').addEventListener('click', handleRevealResume);
 	document.getElementById('reveal-portfolio').addEventListener('click', handleRevealPortfolio);
 	document.getElementById('reveal-contact').addEventListener('click', handleRevealContact);
-	window.addEventListener('resize', resizeCanvas);
+	window.addEventListener('resize', onResize);
 }
 
 // Drawing functions
