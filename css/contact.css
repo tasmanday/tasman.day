@@ -34,6 +34,12 @@
     border: 3px solid #a08615;
 }
 
+.contact-form, 
+.fs-form {
+	box-sizing: border-box;
+	max-width: 100%;
+}
+
 .fs-field {
     margin-bottom: 1.5rem;
 }
@@ -96,7 +102,7 @@
 /* Responsive adjustments */
 @media (max-width: 768px) {
     .contact-form {
-        width: 95vw;
+        width: 100%;
         padding: 1rem;
     }
     
