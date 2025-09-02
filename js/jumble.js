@@ -41,7 +41,7 @@ export function createJumble() {
 		const navbarHeight = navbar.offsetHeight;
 		
 		jumbleCanvas.width = window.innerWidth;
-		jumbleCanvas.height = window.innerHeight - navbarHeight;
+		jumbleCanvas.height = document.documentElement.clientHeight - navbarHeight;
 		
 		jumbleCanvas.style.top = `${navbarHeight}px`;
 		drawJumble();
