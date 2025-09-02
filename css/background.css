@@ -17,3 +17,19 @@
 .background h1 {
 	color: #FFCC7F;
 }
+
+.background.teal {
+	background-color: #013740;
+}
+
+.background.maroon {
+	background-color: #501B27;
+}
+
+.background.orange {
+	background-color: #68310d;
+}
+
+.background.yellow {
+	background-color: #916f01;
+}

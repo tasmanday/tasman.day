@@ -1,0 +1,7 @@
+.paint-canvas {
+	position: fixed;
+	background-color: transparent;
+	z-index: 10;
+	pointer-events: auto;
+}
+

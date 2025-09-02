@@ -40,23 +40,33 @@ function showSection(sectionName) {
 	}
 }
 
+function updateDrawingInstruction(text) {
+	const drawingInstruction = document.querySelector('.drawing-instruction');
+	if (drawingInstruction) {
+		drawingInstruction.textContent = text;
+	}
+}
+
 // Event handlers
 function handleRevealResume(e) {
 	e.preventDefault();
 	showSection('resume');
 	setActiveButton('reveal-resume');
+	updateDrawingInstruction('Draw below to help my resume stand out from the crowd!');
 }
 
 function handleRevealPortfolio(e) {
 	e.preventDefault();
 	showSection('portfolio');
 	setActiveButton('reveal-portfolio');
+	updateDrawingInstruction('Draw below to help my portfolio stand out from the crowd!');
 }
 
 function handleRevealContact(e) {
 	e.preventDefault();
 	showSection('contact');
 	setActiveButton('reveal-contact');
+	updateDrawingInstruction('Draw below to reveal the contact form!');
 }
 
 // Setup function to be called from main.js
