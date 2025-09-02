@@ -108,23 +108,23 @@
 
 .home.fs-form {
     background-color: transparent;
-    border: 3px solid #f3da6a;
+    border: 3px solid #8f4311;
 }
 
 .home.fs-input, .home.fs-textarea {
     background-color: transparent;
-    border: 2px solid #f3da6a;
-    color: #ff8a23;
+    border: 2px solid #8f4311;
+    color: #8f4311;
 }
 
 .home.fs-button {
     background-color: transparent;
-    border: 2px solid #f3da6a;
-    color: #f3da6a;
+    border: 2px solid #8f4311;
+    color: #8f4311;
 }
 
 .home.fs-label {
-    color: #f3da6a;
+    color: #8f4311;
 }
 
 .home.fs-button:hover {

@@ -143,17 +143,17 @@ body {
 	border-radius: 8px;
 	box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.55);
 	border: 3px solid;
-    border-color: #1f9aa3;
+    border-color: #126a70;
 }
 
 .home.resume-skills h2, .home.resume-blurb h2 {
-	color: #0ea3ad;
+	color: #126a70;
 	margin-bottom: 1rem;
 	mix-blend-mode: screen;
 }
 
 .home.resume-blurb p {
-    color: #1f9aa3;
+    color: #126a70;
     font-size: 1.15rem;
 	mix-blend-mode: screen;
 }
@@ -161,7 +161,7 @@ body {
 .home.skill-icon svg {
 	width: 100%;
 	height: 100%;
-    fill: #1f9aa3;
+    fill: #126a70;
     transition: fill 0.3s ease;
 }
 
