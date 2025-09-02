@@ -23,7 +23,7 @@ function onResize() {
 
 function resizeCanvas() {
 	paintCanvas.width = window.innerWidth;
-	paintCanvas.height = document.documentElement.clientHeight - navbarHeight;
+	paintCanvas.height = window.innerHeight - navbarHeight;
 	paintCanvas.style.top = `${navbarHeight}px`;
 	paintCanvas.style.left = '0px';
 }
